@@ -10,7 +10,9 @@ public class BaseDAD {
 			//Necessario para utilizar o driver JDBC do MySql
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
+			
 			//Erro de driver JDBC (adicione o driver .jar do MySql em /WEB-INF/lib)
+			
 			e.printStackTrace();
 		}
 	}
