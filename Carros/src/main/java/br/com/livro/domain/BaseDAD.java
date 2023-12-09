@@ -32,7 +32,5 @@ public class BaseDAD {
 		//testa a conexao.
 		Connection conn = db.getConnection();
 		System.out.println(conn);
-	
-		
 	}
 }
