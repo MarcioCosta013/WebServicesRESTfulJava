@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class BaseDAD {
-	public BaseDAD() {
+public class BaseDAO {
+	public BaseDAO() {
 		try {
 			//Necessario para utilizar o driver JDBC do MySql
 			Class.forName("com.mysql.jdbc.Driver");
@@ -27,7 +27,7 @@ public class BaseDAD {
 	}
 	
 	public static void main(String[] args) throws SQLException {
-		BaseDAD db = new BaseDAD();
+		BaseDAO db = new BaseDAO();
 		
 		//testa a conexao.
 		Connection conn = db.getConnection();
