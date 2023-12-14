@@ -2,8 +2,9 @@ package br.com.livro.domain;
 
 import java.io.Serializable;
 
-public class Carro implements Serializable{
-	//atributos
+
+public class Carro implements Serializable {
+	
 	private static final long serialVesionUID = 1L;
 	private Long id;
 	private String tipo;
@@ -13,6 +14,7 @@ public class Carro implements Serializable{
 	private String urlVideo;
 	private String latitude;
 	private String longitude;
+	
 	
 	//metodos getters e setters e também o toString.
 	public Long getId() {
@@ -64,7 +66,7 @@ public class Carro implements Serializable{
 		this.longitude = longitude;
 	}
 	
-	@Override
+	
 	public String toString() {
 		return "Carro [id=" + id + ", tipo=" + tipo + ", nome=" + nome + ", desc=" + desc + ", urlFoto=" + urlFoto
 				+ ", urlVideo=" + urlVideo + ", latitude=" + latitude + ", longitude=" + longitude + "]";
