@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.livro.domain.Carro;
 import br.com.livro.domain.CarroService;
+import br.com.livro.domain.ListaCarros;
+import br.com.livro.util.JAXBUtil;
+import br.com.livro.util.ServletUtil;
+
 
 @WebServlet("/carros/*")
 public class CarrosServlets extends HttpServlet {

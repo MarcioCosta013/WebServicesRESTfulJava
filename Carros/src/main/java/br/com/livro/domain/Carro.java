@@ -1,8 +1,9 @@
 package br.com.livro.domain;
 
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlRootElement;
 
-
+@XmlRootElement
 public class Carro implements Serializable {
 	
 	private static final long serialVesionUID = 1L;
