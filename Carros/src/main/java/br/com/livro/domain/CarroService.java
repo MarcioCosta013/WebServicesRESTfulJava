@@ -11,6 +11,7 @@ public class CarroService {
 	public List<Carro> getCarros() {
 		try {
 			List<Carro> carros = db.getCarros();
+			System.out.println(db); //teste
 			return carros;
 		} catch (SQLException e) {
 			e.printStackTrace();

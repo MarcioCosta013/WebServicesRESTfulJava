@@ -126,7 +126,7 @@ public class CarroDAO extends BaseDAO {
 		try {
 			conn = getConnection();
 			if(c.getId() == null) {
-				stmt = conn.prepareStatement("inset into carro (nome,descricao,url_foto,url_video, latitude, longitude, tipo) VALUES (?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+				stmt = conn.prepareStatement("insert into carro (nome,descricao,url_foto,url_video, latitude, longitude, tipo) VALUES (?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
 			} else {
 				stmt = conn.prepareStatement("update carro set nome=?,descricao=?,url_foto=?,url_video=?,latitude=?, longitude=?, tipo=? where id=?");
 			}

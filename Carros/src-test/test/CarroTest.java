@@ -30,7 +30,7 @@ public class CarroTest extends TestCase {
 		assertEquals("Bugatti Veyron", bugatti.getNome());
 	}
 	
-	public void testSalvarDeletarCarro() {
+	/*public void testSalvarDeletarCarro() {
 		Carro c = new Carro();
 		c.setNome("Teste");
 		c.setDesc("Teste desc");
@@ -39,11 +39,16 @@ public class CarroTest extends TestCase {
 		c.setLatitude("lat");
 		c.setLongitude("lng");
 		c.setTipo("tipo");
+		
+		assertNull(c.getId()); //testando se o id é nulo mesmo...
+		
 		carroService.save(c);
+		
+		assertNotNull(c.getId());
 		
 		//id do carro salvo
 		Long id = c.getId();
-		assertNotNull(id);
+		
 		
 		//Busca no banco de dados para confirmar que o carro foi salvo
 		c = carroService.getCarro(id);
@@ -71,5 +76,49 @@ public class CarroTest extends TestCase {
 		
 		//Desta vez o carro não existe mais.
 		assertNotNull(c);
+	}*/
+	
+	public void testSalvarDeletarCarro() {
+	    Carro c = new Carro();
+	    c.setNome("Teste");
+	    c.setDesc("Teste desc");
+	    c.setUrlFoto("url foto aqui");
+	    c.setUrlVideo("url video aqui");
+	    c.setLatitude("lat");
+	    c.setLongitude("lng");
+	    c.setTipo("tipo");
+
+	    // Antes de salvar, verifique se o ID é nulo
+	    assertNull(c.getId());
+
+	    carroService.save(c);
+
+	    // Após salvar, verifique se o ID não é nulo
+	    assertNotNull(c.getId());
+
+	    // id do carro salvo
+	    Long id = c.getId();
+	    
+	    // Busca no banco de dados para confirmar que o carro foi salvo
+	    c = carroService.getCarro(id);
+	    assertNotNull(c);
+	    assertEquals("Teste", c.getNome());
+
+	    // Atualiza o carro
+	    c.setNome("Teste UPDATE");
+	    carroService.save(c);
+
+	    // Busca o carro novamente (vai estar atualizado)
+	    c = carroService.getCarro(id);
+	    assertEquals("Teste UPDATE", c.getNome());
+
+	    // Deleta o carro
+	    carroService.delete(id);
+
+	    // Busca o carro novamente
+	    c = carroService.getCarro(id);
+
+	    // Desta vez o carro não existe mais.
+	    assertNull(c);
 	}
 }
